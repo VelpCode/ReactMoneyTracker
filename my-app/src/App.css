@@ -56,6 +56,7 @@ form div.basics {
 
 div.transactions {
   margin-top: 5px;
+  border-top: 1px solid #30313d;
 
 }
 
@@ -63,6 +64,12 @@ div.transaction {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
+  border-top: 1px solid #30313d;
+
+}
+
+div.transaction:first-child {
+  border-top: 0;
 }
 
 div.transaction div.name {
@@ -72,4 +79,16 @@ div.transaction div.name {
 div.transaction div.description {
   font-size: .8rem;
   color: #888;
+}
+
+div.right {
+  text-align: right;
+}
+
+div.price.green {
+  color: #1c1;
+}
+
+div.price.red {
+  color: #c11;
 }
