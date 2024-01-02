@@ -60,5 +60,16 @@ div.transactions {
 }
 
 div.transaction {
-  display: ;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+div.transaction div.name {
+  font-size: 1.1rem;
+}
+
+div.transaction div.description {
+  font-size: .8rem;
+  color: #888;
 }
