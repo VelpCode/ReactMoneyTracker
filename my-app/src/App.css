@@ -1,5 +1,8 @@
-body {
+* {
+  box-sizing: border-box;
+}
 
+body {
   background-color: #171711;
   color: #ddd;
 }
@@ -23,8 +26,39 @@ form {
 
 form input {
   width: 100%;
+  background-color: #171711;
+  color: #ddd;
+  border: 2px solid #30313d;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+form input[type="datetime-local"] {
+  color: #777;
+}
+
+form button {
+  color: #333;
+  background-color: #ddd;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 10px;;
 }
 
 form div.basics {
   display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+div.transactions {
+  margin-top: 5px;
+
+}
+
+div.transaction {
+  display: ;
 }
