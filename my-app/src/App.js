@@ -13,8 +13,14 @@ function App() {
 
   function addNewTransaction(event) {
     event.preventDefault()
-    const url = process.env.REACT_APP_API_URL;
-    console.log(url)
+    const url = process.env.REACT_APP_API_URL+'/transaction';
+    fetch(url, {
+      method: 'POST',
+      headers: {'Content-type':'application/json'},
+      body: JSON.stringify({name, description, datetime})
+    }).then(response.json().then(json => {
+      console.log('result', json);
+    }))
   }
   return (
     <main>
