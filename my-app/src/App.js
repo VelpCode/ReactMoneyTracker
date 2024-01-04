@@ -1,43 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
+
+
+
+console.log('display')
 
 function App() {
   const [name, setName] = useState('');
   const [datetime, setDatetime] = useState('');
   const [description, setDescription] = useState('');
-  function addNewTransaction(ev) {
-    ev.preventDefault();
-    const url = process.env.REACT_APP_API_URL+'/transaction';
-    fetch(url, {
-      method: 'POST',
-      headers: {'Content-type':'application/json'},
-      body: JSON.stringify({name,description,datetime})
-    }).then(response => {
-      response.json().then(json => {
-        console.log('result', json);
-      })
-    })
-    console.log(url);
+
+
+  function addNewTransaction(event) {
+    event.preventDefault()
+    const url = process.env.REACT_APP_API_URL;
+    console.log(url)
   }
   return (
     <main>
-      <h1>$400<span>.00</span></h1>
+      <h1>$700<span>.00</span></h1>
       <form onSubmit={addNewTransaction}>
         <div className = "basics">
           <input type = "text" 
-          value = {name}
-          onChange = {ev => setName(ev.target.value)}
-          placeholder = {'+200 nwe samsung tv'}/>
+              value = {name}
+              onChange = {ev => setName(ev.target.value)}
+              placeholder = {'+200 nwe samsung tv'}/>
           <input value = {datetime}
           onChange={ev => setDatetime(ev.target.value)}
           type = "datetime-local"/>
         </div>
         <div className = "description">
           <input type = "text"
-          value = {description}
-          onChange={ev => setDescription(ev.target.value)}
-          placeholder = {'description'}/>
+              value = {description}
+              onChange={ev => setDescription(ev.target.value)}
+              placeholder = {'description'}/>
         </div>
 
         <button type = "submit">Add New Transaction</button>
