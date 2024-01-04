@@ -20,7 +20,9 @@ function App() {
       body: JSON.stringify({name, description, datetime})
     }).then(response.json().then(json => {
       console.log('result', json);
-    }))
+    }).catch(error) => {
+      console.error('Error', error);
+    })
   }
   return (
     <main>
