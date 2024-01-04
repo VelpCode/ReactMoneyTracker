@@ -12,18 +12,22 @@ function App() {
 
 
   function addNewTransaction(event) {
-    event.preventDefault()
-    const url = process.env.REACT_APP_API_URL+'/transaction';
+    event.preventDefault();
+    const url = `${process.env.REACT_APP_API_URL}/transaction`; // Use template literals for clarity
     fetch(url, {
       method: 'POST',
-      headers: {'Content-type':'application/json'},
-      body: JSON.stringify({name, description, datetime})
-    }).then(response.json().then(json => {
-      console.log('result', json);
-    }).catch(error) => {
-      console.error('Error', error);
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, description, datetime })
     })
+    .then(response => response.json())
+    .then(json => {
+      console.log('result', json);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   }
+  
   return (
     <main>
       <h1>$700<span>.00</span></h1>
