@@ -14,7 +14,9 @@ function App() {
       headers: {'Content-type':'application/json'},
       body: JSON.stringify({name,description,datetime})
     }).then(response => {
-      
+      response.json().then(json => {
+        console.log('result', json);
+      })
     })
     console.log(url);
   }
